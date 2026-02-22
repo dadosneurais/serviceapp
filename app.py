@@ -18,7 +18,7 @@ MONGO_URI = os.getenv("MONGO_URI")
 
 try:
     client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-    db = client["geoKotlin"]
+    db = client["ServiceApp"]
     collection = db["locations"]
     print("Conectado ao MongoDB!")
 except Exception as e:
@@ -121,3 +121,4 @@ def save():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
+
